@@ -1,5 +1,7 @@
 # Jira Ticket Manager — Architecture & Codebase Guide
 
+> **[📖 Architecture](README.md)** | **[🚀 Vibe Coding Guide](VIBE_CODING_GUIDE.md)**
+
 ## Overview
 
 The Jira Ticket Manager is a **Power Apps Code App** built with **React + TypeScript + Vite**. It provides full CRUD operations on Jira Cloud issues, an **interactive reporting dashboard**, and an embedded **Copilot Studio AI agent** for natural-language ticket assistance — all powered by **Power Platform connectors** (Jira + Microsoft Copilot Studio). API traffic is routed through Azure API Hub, which handles OAuth authentication and request proxying.
