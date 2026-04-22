@@ -1,0 +1,32 @@
+{
+  "version": "1.0",
+  "appId": "5a9b6bd4-0781-4e03-9288-62e0a9972532",
+  "appDisplayName": "Jira Ticket Manager",
+  "region": "prod",
+  "environmentId": "245e19cc-62cf-e2a3-98c7-9f3633724013",
+  "description": " ",
+  "buildPath": "./dist",
+  "buildEntryPoint": "index.html",
+  "localAppUrl": "http://localhost:3000",
+  "logoPath": "Default",
+  "connectionReferences": {
+    "caebf31f-0815-408c-9877-a152f1cc88d0": {
+      "id": "/providers/Microsoft.PowerApps/apis/shared_jira",
+      "displayName": "Jira",
+      "dataSources": [
+        "jira"
+      ],
+      "authenticationType": "oauth",
+      "dataSets": {}
+    },
+    "f3cc76c4-271d-4b44-ab26-a19822b75971": {
+      "id": "/providers/Microsoft.PowerApps/apis/shared_microsoftcopilotstudio",
+      "displayName": "Microsoft Copilot Studio",
+      "dataSources": [
+        "microsoftcopilotstudio"
+      ],
+      "dataSets": {}
+    }
+  },
+  "databaseReferences": {}
+}
