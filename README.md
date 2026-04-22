@@ -1,6 +1,42 @@
-# Jira Ticket Manager — Architecture & Codebase Guide
+# Jira Ticket Manager — Power Apps Code App
 
-> **[📖 Architecture](README.md)** | **[🚀 Vibe Coding Guide](VIBE_CODING_GUIDE.md)**
+> **[📖 Architecture](#architecture-diagram)** | **[🚀 Vibe Coding Guide](VIBE_CODING_GUIDE.md)**
+
+![App Screenshot — Dashboard with Copilot Studio Agent](docs/images/app-screenshot.png)
+
+## What is this?
+
+A **vibe-coded** Power Apps Code App that brings together **Jira**, **Confluence**, and **Microsoft Copilot Studio** into a single, modern interface — built entirely with AI-assisted development using GitHub Copilot.
+
+### Features
+
+- **Jira Ticket CRUD** — Create, read, update, and comment on Jira issues directly from Power Apps
+- **Reporting Dashboard** — Visual analytics with KPI cards, donut charts (by status & priority), and bar charts (by issue type & assignee) — all computed client-side from live Jira data
+- **Embedded Copilot Studio Agent** — A floating AI chat widget connected to a Copilot Studio agent that uses the **Atlassian Rovo MCP tool** to reason over Confluence pages and Jira tickets, delivering contextual answers with rich markdown formatting
+- **Power Platform Native** — No direct API calls; everything flows through Power Platform connectors (`shared_jira` + `shared_microsoftcopilotstudio`) with automatic OAuth handling
+
+### How the Copilot Agent Works
+
+The embedded Copilot Studio agent isn't just a chatbot — it's connected to **Atlassian Rovo via MCP (Model Context Protocol)**, giving it the ability to:
+
+- **Search and reason over Confluence knowledge base pages** — documentation, runbooks, SOPs
+- **Query Jira tickets** — look up issue details, statuses, assignees, and history
+- **Provide contextual answers** — combining information from both Confluence and Jira to answer questions like *"how can I use Copilot Studio skills with GitHub Copilot?"* with grounded, sourced responses
+
+The agent runs in Copilot Studio with Microsoft authentication, invoked via the `ExecuteCopilotAsyncV2` connector action — no MSAL tokens, no redirect URIs, no popup auth required.
+
+### Tech Stack
+
+| Layer | Technology |
+|---|---|
+| **Frontend** | React 19 + TypeScript 5.9 + Vite 7 |
+| **Platform** | Power Apps Code Apps |
+| **Data** | Power Platform Jira Connector (OAuth) |
+| **AI Agent** | Copilot Studio + Atlassian Rovo MCP Tool |
+| **Rendering** | react-markdown for agent responses |
+| **Deployment** | `pac code push` via PAC CLI |
+
+---
 
 ## Overview
 
